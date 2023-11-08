@@ -1,7 +1,7 @@
 public class Zoo {
     Animal[] animals;
     String name,city;
-    int nbrCages;
+    static final int nbrCages=25;
     int nbrAnimals=0;
 
 
@@ -9,7 +9,6 @@ public class Zoo {
         animals = new Animal[nbrCages];
         this.name = name;
         this.city = city;
-        this.nbrCages = nbrCages;
     }
 
     /*void diplayZoo(){
@@ -60,6 +59,18 @@ public class Zoo {
             this.nbrAnimals--;
             System.out.println(animal.name + " a été supprimé avec succés");
             return true;
+        }
+    }
+
+    boolean isZooFull(){
+        return nbrAnimals == nbrCages;
+    }
+
+    static Zoo comparerZoo(Zoo z1, Zoo z2){
+        if (z1.nbrAnimals <= z2.nbrAnimals) {
+            return z2;
+        } else {
+            return z1;
         }
     }
 }

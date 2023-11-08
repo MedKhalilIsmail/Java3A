@@ -2,8 +2,7 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class ZooManagement {
-    int nbrCages = 20;
-    String zooName = "my zoo";
+
     public static void main(String[] args) {
 
         /* PROSIT 1
@@ -24,7 +23,9 @@ public class ZooManagement {
         Animal lion = new Animal("Lions","King",5,true);
         Animal singe = new Animal("Singes","Banana",3,true);
         Animal singe1 = new Animal("Singes","Banana",3,true);
-        Zoo myZoo = new Zoo("Nabeul","Cap Zoo",25);
+        Zoo myZoo = new Zoo("Cap Zoo","Nabeul",25);
+        Zoo myZoo1 = new Zoo("Wildlife Zoo","Ariana",25);
+
         //myZoo.diplayZoo();
         System.out.println(lion.toString());
         System.out.println(myZoo.toString());
@@ -34,6 +35,10 @@ public class ZooManagement {
         myZoo.displayAnimals();
         System.out.println(myZoo.searchAnimal(singe));
         System.out.println(myZoo.removeAnimal(singe));
+        if (myZoo.isZooFull()) //if ...==true
+            System.out.println(myZoo.name + " est complet.");
+        else System.out.println(myZoo.name + " n'est pas complet.");
+        System.out.println(Zoo.comparerZoo(myZoo,myZoo1).name + " a plus d'animaux");
 
     }
 }
